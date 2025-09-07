@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+Sure! Here’s a **README section for someone who wants to fork your MediBot Chat project and set it up locally**. It’s clear and step-by-step.
 
-First, run the development server:
+---
+
+# MediBot Chat
+
+A modern, animated chatbot built with **Next.js**, **Tailwind CSS**, and **Framer Motion**.
+
+---
+
+## Fork & Setup Locally
+
+Follow these steps to run the project on your local machine:
+
+---
+
+### 1. **Fork the Repository**
+
+1. Go to the project repository on GitHub.
+2. Click the **Fork** button at the top-right corner.
+3. The project will be forked to your GitHub account.
+
+---
+
+### 2. **Clone Your Fork**
+
+Open your terminal and clone your forked repository:
+
+```bash
+git clone https://github.com/Shivam-Gyan/RAG.git
+```
+
+Replace `Shivam-Gyan` with your GitHub username.
+
+Navigate into the project folder:
+
+```bash
+cd client
+```
+
+---
+
+### 3. **Install Dependencies**
+
+Install all the required packages:
+
+```bash
+npm install
+```
+
+This will install Next.js, Tailwind CSS, Framer Motion, and other dependencies.
+
+---
+
+### 4. **Run the Development Server**
+
+Start the Next.js development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and go to [http://localhost:3000](http://localhost:3000) to see the app running.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. **Project Structure Overview**
 
-## Learn More
+```
+/app
+  ├─ page.tsx          # Main page with navbar and chat
+  └─ globals.css       # Tailwind CSS styles
+/components
+  ├─ ChatUI.tsx        # Main chat interface
+  ├─ FileUpload.tsx    # File upload component
+  └─ MessageBubble.tsx # Animated chat messages
+/hooks
+  └─ useChat.ts        # Custom chat hook
+/public
+  └─ assets            # Images or icons
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 6. **Customizing the Project**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Tailwind Styles:** Modify `tailwind.config.js` or `globals.css`.
+* **Animations:** Adjust Framer Motion props in `ChatUI`, `MessageBubble`, or `FileUpload`.
+* **Chat Logic:** Edit the `useChat.ts` hook for message handling.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 7. **Optional: Run in Production Mode**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Build the project for production:
+
+```bash
+npm run build
+npm start
+```
+
