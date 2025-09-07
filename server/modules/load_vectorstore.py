@@ -5,6 +5,7 @@ from tqdm.auto import tqdm
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from modules.pdf_handlers import save_uploaded_files
 # from langchain.vectorstores import Chroma
 # from langchain_community.vectorstores import Chroma
 from langchain_chroma import Chroma
@@ -49,15 +50,10 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 def load_vectorstore(uploaded_files):
     embed_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
-    # ✅ Save uploaded files and collect paths in one pass
-    file_paths = []
-    for file in uploaded_files:
-        save_path = Path(UPLOAD_DIR) / file.filename
-        with open(save_path, "wb") as f:
-            f.write(file.file.read())
-        file_paths.append(str(save_path))
+    # Instead of manually saving files
+    file_paths = save_uploaded_files(uploaded_files)
 
-    # ✅ Load all documents from all files
+    # Then pass file_paths to the loader
     all_documents = []
     for file_path in file_paths:
         loader = PyPDFLoader(file_path)
@@ -70,7 +66,7 @@ def load_vectorstore(uploaded_files):
     # ✅ Split into chunks once
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
-        chunk_overlap=100
+        chunk_overlap=400
     )
     chunks = splitter.split_documents(all_documents)
 

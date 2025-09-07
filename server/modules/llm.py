@@ -12,7 +12,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 def get_llm_chain(vectorstore):
     # Define LLM
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash-lite",
+        model="gemini-2.5-flash",
         google_api_key=GOOGLE_API_KEY,
         temperature=0.2  # ✅ Low temp → factual answers
     )
@@ -47,9 +47,10 @@ Your job is to provide clear, accurate, and helpful responses based **only on th
     # Build RetrievalQA Chain
     # retriever = vectorstore.as_retriever(search_kwargs={"k":3})
     retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
-    docs = retriever.invoke("test")
-    logger.info(f"Retriever pulled {len(docs)} docs")
-    return RetrievalQA.from_chain_type(
+    # docs = retriever.invoke("test")
+    # for i, doc in enumerate(docs):
+    #     logger.debug(f"Doc {i} content preview: {doc.page_content[:500]}")
+    RetrievalQAChain = RetrievalQA.from_chain_type(
         llm=llm,
         chain_type="stuff",  # ✅ simplest: stuff all docs into context
         retriever=retriever,
@@ -57,3 +58,7 @@ Your job is to provide clear, accurate, and helpful responses based **only on th
         return_source_documents=True,
         verbose=True  # ✅ helpful for debugging
     )
+
+
+
+    return RetrievalQAChain
