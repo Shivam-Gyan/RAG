@@ -8,3 +8,8 @@ __pycache__/
 instance/
 static/
 uploaded_pdfs/
+chroma.sqlite3
+length.bin
+header.bin
+link_lists.bin
+data_level0.bin
