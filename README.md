@@ -1,7 +1,3 @@
-Absolutely! Here’s a **fully professional, integrated README** for your MediBot project, covering both **frontend and backend**, including setup, virtual environment, installation, and media integration. I’ll also include **syntax highlighting for commands**, placeholders for images and video links, and structured sections.
-
----
-
 # MediBot Chat & Backend
 
 A modern, interactive chatbot platform with **Next.js frontend** and **Python backend**.
