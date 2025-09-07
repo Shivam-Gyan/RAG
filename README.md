@@ -2,10 +2,6 @@
 
 A modern, interactive chatbot platform with **Next.js frontend** and **Python backend**.
 Users can chat, upload PDFs, and interact with a dynamic UI powered by **Framer Motion**. The backend handles AI responses and file processing.
-
-![MediBot Preview](https://link-to-your-image.com/screenshot.png)
-*(Replace with your actual screenshot link)*
-
 ---
 
 ## Table of Contents
