@@ -1,0 +1,43 @@
+# Web Framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# LangChain & Ecosystem
+langchain
+langchain-community
+langchain-core
+#langchain-groq
+langchain-google-genai
+
+# Vectorstore
+langchain_chroma
+chromadb
+# pinecone
+
+# Embeddings
+# sentence-transformers
+# langchain-google-generative-ai
+# PDF Parsing
+PyPDF  # backend for PyPDFLoader via langchain_community
+
+# Environment Variables
+python-dotenv
+
+# Typing & Utilities
+pydantic
+requests
+
+# Logging (optional but recommended)
+loguru
+logger
+
+# File Uploads
+aiofiles
+
+# Process
+tqdm
+
+
+
+# pip install -r requirements.txt
